@@ -7,9 +7,7 @@
   });
 </script>
 
-<template>
-  <p>123</p>
-</template>
+<p>123</p>
 
 <style>
   p {
