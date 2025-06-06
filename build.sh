@@ -5,4 +5,4 @@ cd $DIR
 set -ex
 
 cd src
-bun x vite build
+NODE_ENV=development bun x vite build

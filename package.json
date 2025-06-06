@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "@3-/svelte-com": "^0.1.10",
+    "@3-/svelte-com": "file:../hpc/coffee/svelte-com",
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
     "ansis": "^4.1.0",
     "lodash-es": "^4.17.21",
