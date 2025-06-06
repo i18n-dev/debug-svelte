@@ -1,7 +1,10 @@
 {
   "type": "module",
   "dependencies": {
+    "@3-/svelte-com": "^0.1.10",
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "ansis": "^4.1.0",
+    "lodash-es": "^4.17.21",
     "svelte": "^5.33.14",
     "vite": "^6.3.5"
   }
