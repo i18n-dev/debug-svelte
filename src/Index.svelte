@@ -1,15 +1,13 @@
+<svelte:options customElement={{ tag: "i-index", shadow: "none" }} />
+
 <script lang="coffee">
-> svelte > onMount
+import {onMount} from 'svelte'
 
-onMount =>
-  console.log '>'
+onMount(()=>{
+  console.log('test index')
   return
-
+})
 </script>
-
-<template lang="pug">
-
-</template>
 
 <style lang="stylus">
 
