@@ -3,9 +3,16 @@
   "workspaces": {
     "": {
       "dependencies": {
+        "@3-/camel": "^0.1.1",
+        "@3-/coffee_plus": "^0.1.26",
+        "@3-/css2js": "^0.1.6",
+        "@3-/extract": "^0.1.8",
+        "@3-/snake": "^0.0.3",
         "@3-/svelte-com": "file:../hpc/coffee/svelte-com",
+        "@3-/write": "^0.0.2",
         "@sveltejs/vite-plugin-svelte": "^5.1.0",
         "ansis": "^4.1.0",
+        "coffeescript": "^2.7.0",
         "lodash-es": "^4.17.21",
         "svelte": "^5.33.14",
         "vite": "^6.3.5",
