@@ -1,16 +1,20 @@
-<svelte:options customElement={{ tag: "i-test", shadow: "none" }} />
+<script lang="coffee">
+> svelte > onMount
 
-<script>
-  import { onMount } from "svelte";
-  onMount(() => {
-    console.log(456);
-  });
+onMount =>
+  console.log 123
+  return
 </script>
 
-<p>123</p>
+<template lang="pug">
+main 456
+</template>
 
-<style>
-  p {
-    font-size: 20px;
-  }
+<style lang="stylus">
+main
+  user-select none
+  width 350px
+  display flex
+  flex-direction column
+  align-items center
 </style>
