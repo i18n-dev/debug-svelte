@@ -1,3 +1,133 @@
+<template lang="pug">
+main
+  +if tip!==false
+    i
+      p
+        +if tip
+          b
+            i {@html tip}
+            | 按序点击下图中对应图标
+          +elseif tip === undefined
+            | 验证码加载中 ⋯
+          +else
+            | 验证中 ⋯
+      +if tip
+        button(@click=get title="刷新")
+    b(@&b class:Wait=!tip)
+    +else
+      svg(height="100" style="padding: 64px 0" width="100")
+        path(d="m20 50 20 20 40-40" style="animation: ok 0.9s ease forwards")
+        style.
+</template>
+
+<style lang="stylus">
+@keyframes ok
+	to
+		stroke-dashoffset 0
+
+main
+	user-select none
+	width 350px
+	display flex
+	flex-direction column
+	align-items center
+
+	&>svg>path
+		fill none
+		stroke green
+		stroke-linecap round
+		stroke-linejoin round
+		stroke-width 8
+		stroke-dasharray 100
+		stroke-dashoffset 100
+
+	&>i
+		width 100%
+		display flex
+		align-items center
+		box-sizing border-box
+		padding 0 8px
+		justify-content space-between
+
+		&>p
+			font-size 18px
+			font-style normal
+			margin 8px 0
+
+			&>b
+				font-weight 400
+				line-height 1.5
+				display flex
+
+				&>i
+					vertical-align middle
+					margin-right 8px
+					display inline-flex
+					flex 1
+
+					&>:global(svg)
+						color #ff3e00
+						margin 0 4px
+						opacity 0.9
+						padding 2px
+						width 18px
+
+						&:first-child
+							margin-left 0
+
+		&>button
+			background var(--svgRefresh) 50% 50% / 16px no-repeat
+			flex-shrink 0
+			padding 0
+			height 24px
+			width 30px
+			border-radius 18px
+			border 2px solid #000
+			opacity 0.5
+			box-shadow 0 0 3px #999 inset
+			cursor pointer
+			margin 8px 0 8px 8px
+
+			&:hover
+				opacity 1
+				filter var(--hF)
+
+	&>b
+		width 350px
+		height 350px
+		background-size 96px
+		cursor pointer
+		display block
+		position relative
+
+		&>:global(b)
+			background rgba(255, 0, 0, 0.9)
+			align-items center
+			border 3px solid #fff
+			border-radius 15px
+			box-shadow inset 0 0 7px #00000080
+			color #fff
+			cursor var(--svgXs) 10 10, pointer
+			display flex
+			font-family 'h'
+			font-style normal
+			font-weight 600
+			font-variation-settings 'wght' 900
+			font-size 16px
+			height 24px
+			justify-content center
+			padding 0
+			position absolute
+			user-select none
+			width 24px
+
+			&:hover
+				background #eee
+				color #666
+				border-color red
+				box-shadow inset 0 0 7px red
+</style>
+
 <script lang="coffee">
 > svelte > onMount
   -/srv.js > captcha captchaVerify CaptchaD
@@ -84,11 +214,3 @@ render = ([_captcha_id, img, _tip])=>
   b.onclick = imgClick
   return
 </script>
-
-<template lang="pug">
-
-</template>
-
-<style lang="stylus">
-
-</style>

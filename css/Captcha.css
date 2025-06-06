@@ -1,0 +1,122 @@
+@keyframes ok {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+i-captcha>main {
+  -webkit-user-select: none;
+  user-select: none;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  display: flex;
+
+  & > svg > path {
+    fill: none;
+    stroke: green;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 8px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100px;
+  }
+
+  & > i {
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 8px;
+    display: flex;
+
+    & > p {
+      margin: 8px 0;
+      font-size: 18px;
+      font-style: normal;
+
+      & > b {
+        font-weight: 400;
+        line-height: 1.5;
+        display: flex;
+
+        & > i {
+          vertical-align: middle;
+          flex: 1;
+          margin-right: 8px;
+          display: inline-flex;
+
+          & > svg {
+            color: #ff3e00;
+            opacity: .9;
+            width: 18px;
+            margin: 0 4px;
+            padding: 2px;
+
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    & > button {
+      background: var(--svgRefresh) 50% 50% / 16px no-repeat;
+      opacity: .5;
+      cursor: pointer;
+      border: 2px solid #000;
+      border-radius: 18px;
+      flex-shrink: 0;
+      width: 30px;
+      height: 24px;
+      margin: 8px 0 8px 8px;
+      padding: 0;
+      box-shadow: inset 0 0 3px #999;
+
+      &:hover {
+        opacity: 1;
+        filter: var(--hF);
+      }
+    }
+  }
+
+  & > b {
+    cursor: pointer;
+    background-size: 96px;
+    width: 350px;
+    height: 350px;
+    display: block;
+    position: relative;
+
+    & > b {
+      color: #fff;
+      cursor: var(--svgXs) 10 10, pointer;
+      font-variation-settings: "wght" 900;
+      -webkit-user-select: none;
+      user-select: none;
+      background: #ff0000e6;
+      border: 3px solid #fff;
+      border-radius: 15px;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      font-family: h;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      display: flex;
+      position: absolute;
+      box-shadow: inset 0 0 7px #00000080;
+
+      &:hover {
+        color: #666;
+        background: #eee;
+        border-color: red;
+        box-shadow: inset 0 0 7px red;
+      }
+    }
+  }
+}
